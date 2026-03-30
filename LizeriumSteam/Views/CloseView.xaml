@@ -1,0 +1,39 @@
+﻿<UserControl
+    x:Class="LizeriumSteam.Views.CloseView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:local="clr-namespace:LizeriumSteam.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid Background="{DynamicResource BackgroundBrush}">
+        <Border
+            Padding="20"
+            Background="{DynamicResource MainContentBackgroundBrush}"
+            BorderBrush="{DynamicResource BorderBrush}"
+            BorderThickness="1"
+            CornerRadius="10">
+            <hc:FlexPanel
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                AlignContent="FlexStart"
+                AlignItems="FlexStart"
+                Effect="{DynamicResource EffectShadow4}"
+                FlexDirection="RowReverse"
+                FlexWrap="Wrap"
+                JustifyContent="Center">
+                <Button
+                    MinWidth="100"
+                    Margin="10"
+                    Command="{Binding ExitCommand}"
+                    Content="{DynamicResource CloseViewExitText}" />
+                <Button
+                    MinWidth="100"
+                    Margin="10"
+                    Command="{Binding MinimizeCommand}"
+                    Content="{DynamicResource CloseViewCollapseText}" />
+            </hc:FlexPanel>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+	<version>1.0.6</version>
+	<updateServer>https://localhost:7176/uploader/</updateServer>
+	<modePathArchive>GameModes</modePathArchive>
+	<executable>LizeriumLauncher.exe</executable>
+	<last_version>1.0.5</last_version>
+	<mods>
+		<Freelancer>
+			<Title>
+				<Ru>Freelancer (2003)</Ru>
+				<En>Freelancer (2003)</En>
+			</Title>
+			<Folder>C:\Program Files (x86)\Freelancer</Folder>
+			<GameSaveFolder>My Games\Freelancer</GameSaveFolder>
+			<BackupFolder>FreelancerSaveBackups</BackupFolder>
+			<StartupFolder>EXE</StartupFolder>
+			<StartupFile>Freelancer.exe</StartupFile>
+			<Installer>FreelancerInstaller.exe</Installer>
+			<LastVersionInstall>1.0.0</LastVersionInstall>
+			<SupportUrl></SupportUrl>
+			<Updated>false</Updated>
+			<Server>
+				<Ip></Ip>
+				<Port></Port>
+			</Server>
+		</Freelancer>
+		<LizeriumFreelancerMode>
+			<Title>
+				<Ru>Freelancer Lizerium</Ru>
+				<En>Freelancer Lizerium</En>
+			</Title>
+			<Folder>F:\LIZERIUM\6_COMPARE\COMPARE_GAMES\LizeriumFreelancerModeChange1</Folder>
+			<GameSaveFolder>My Games\Freelancer</GameSaveFolder>
+			<BackupFolder>LizeriumSaveBackups</BackupFolder>
+			<StartupFolder>EXE</StartupFolder>
+			<StartupFile>Freelancer.exe</StartupFile>
+			<Installer>LizeriumFLInstaller.exe</Installer>
+			<LastVersionInstall>99.3.12</LastVersionInstall>
+			<SupportUrl>https://lizup.ru/Home/Wish</SupportUrl>
+			<Updated>true</Updated>
+			<Server>
+				<Ip>89.110.96.215</Ip>
+				<Port>2302</Port>
+			</Server>
+		</LizeriumFreelancerMode>
+		<LizeriumUnity>
+			<Title>
+				<Ru>Freelancer Lizerium (Unity ver.)</Ru>
+				<En>Freelancer Lizerium (Unity ver.)</En>
+			</Title>
+			<Folder>C:\Program Files (x86)\LizeriumUnity</Folder>
+			<GameSaveFolder>My Games\Lizerium</GameSaveFolder>
+			<BackupFolder>LizeriumUnitySaveBackups</BackupFolder>
+			<StartupFolder></StartupFolder>
+			<StartupFile>Lizerium.exe</StartupFile>
+			<Installer>LizeriumUInstaller.exe</Installer>
+			<LastVersionInstall>1.0.0</LastVersionInstall>
+			<SupportUrl></SupportUrl>
+			<Updated>false</Updated>
+			<Server>
+				<Ip></Ip>
+				<Port></Port>
+			</Server>
+		</LizeriumUnity>
+	</mods>
+</config>

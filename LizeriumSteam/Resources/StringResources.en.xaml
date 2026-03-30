@@ -1,0 +1,64 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!--  String resource that can be localized  -->
+    <system:String x:Key="FooterAuthorText">Dvurechensky</system:String>
+    <system:String x:Key="InGameStateText">In Game</system:String>
+    <system:String x:Key="NeedUpdateStateText">Update available!</system:String>
+    <system:String x:Key="DownloadUpdateStateText">Downloading...</system:String>
+    <system:String x:Key="CloseViewTitleText">Closing</system:String>
+    <system:String x:Key="CloseViewExitText">Exit</system:String>
+    <system:String x:Key="CloseViewCollapseText">Collapse</system:String>
+    <system:String x:Key="MainViewWaitStatusText">Waiting for it to load...</system:String>
+    <system:String x:Key="MainViewWishStatusText">Wishes and questions ❓</system:String>
+    <system:String x:Key="MainViewReferenceText">Reference</system:String>
+    <system:String x:Key="MainViewLanguageText">Language</system:String>
+    <system:String x:Key="MainViewStateErrorUpdateSuccessText">Updated to the latest version. 💫 Please restart the application!</system:String>
+    <system:String x:Key="MainViewStateErrorUpdateErrorConnectServerText"> Not updated! Connection error! ⛔</system:String>
+    <system:String x:Key="MainViewStateErrorUpdateErrorSaveFileText"> Not updated! Error saving file! ⛔</system:String>
+    <system:String x:Key="MainViewStateErrorUpdateNotAvailableUpdateText_1"> Version: </system:String>
+    <system:String x:Key="MainViewStateErrorUpdateNotAvailableUpdateText_2"> Please restart the application!</system:String>
+    <system:String x:Key="MainViewUpdateAvailableText_1">Downloading version  💢 </system:String>
+    <system:String x:Key="MainViewUpdateAvailableText_2"> 💢 Please wait...</system:String>
+    <system:String x:Key="GameViewChangeLangPrefixText">on</system:String>
+    <system:String x:Key="GameViewChangeLangErrorText">Error changing language at</system:String>
+    <system:String x:Key="GameViewChangeLangAudioErrorText">Error copying audio files for language</system:String>
+    <system:String x:Key="GameViewChangeLangText_1">Changing the language </system:String>
+    <system:String x:Key="GameViewChangeLangText_2"> happened successfully!</system:String>
+    <system:String x:Key="GameViewTitleText">Games</system:String>
+    <system:String x:Key="GameViewMenuItemChangeLangText">Change language</system:String>
+    <system:String x:Key="GameViewStartGameText">Start</system:String>
+    <system:String x:Key="GameViewForceStartGameText">Force Start</system:String>
+    <system:String x:Key="GameViewInstallGameText">Install</system:String>
+    <system:String x:Key="GameViewUpdateGameText">Update</system:String>
+    <system:String x:Key="GameViewStopUpdateGameText">Cancel</system:String>
+    <system:String x:Key="GameViewInGameText">To the game</system:String>
+    <system:String x:Key="GameViewOpenControlBtnsText">Control button panel</system:String>
+    <system:String x:Key="GameViewOpenMenuText">Features Menu</system:String>
+    <system:String x:Key="GameViewQueueFilesText">In the queue</system:String>
+    <system:String x:Key="GameViewUnpackFilesText">Unpacked</system:String>
+    <system:String x:Key="GameViewDelFilesText">Deleted</system:String>
+    <system:String x:Key="GameViewAllFilesText">Total</system:String>
+    <system:String x:Key="AppUpdateCompletedAlertTitleText">Update Status</system:String>
+    <system:String x:Key="AppUpdateCompletedAlertSuccessText">Update complete! Please restart the application...</system:String>
+    <system:String x:Key="AppUpdateCompletedAlertErrorSaveFileText">Update interrupted! Error saving file...</system:String>
+    <system:String x:Key="AppUpdateCompletedAlertErrorUnpackFileText">Update interrupted! Error unpacking files...</system:String>
+    <system:String x:Key="AppUpdateCompletedAlertErrorConnectServerText">Update not possible! Internet connection error...</system:String>
+    <system:String x:Key="AppUpdateAvailableTitleServerText">Application update</system:String>
+    <system:String x:Key="AppDownloadAvailableTitleServerText">Downloading applications</system:String>
+    <system:String x:Key="AppDeployAvailableTitleServerText">Deploying the application</system:String>
+    <system:String x:Key="AppDeployAvailableUIAlertText">Files downloaded, start installation -</system:String>
+    <system:String x:Key="AppNotDeployAvailableTitleServerText">impossible because installation files were not found!</system:String>
+    <system:String x:Key="AppUpdateAvailableContentServerText">New version released: </system:String>
+    <system:String x:Key="CompleteUpdateProjectAlertSuccessText_1">Update for the project</system:String>
+    <system:String x:Key="CompleteUpdateProjectAlertSuccessText_2">completed successfully!</system:String>
+    <system:String x:Key="CompleteUpdateProjectAlertSuccessText_2_e">cancelled!</system:String>
+    <system:String x:Key="CompleteNotAvailableAlertSuccessText_1">Update * Download the application</system:String>
+    <system:String x:Key="CompleteNotAvailableAlertSuccessText_2">There are no versions available for download</system:String>
+    <system:String x:Key="WarningLowTimeOperationEventText">Please wait, unpacking the primary archive may take some time!</system:String>
+    <system:String x:Key="WarningUnpack7zOperationEventText">Please wait, unpacking secondary archives may take some time!</system:String>
+    <system:String x:Key="SuccessUnpackTarOperationEventText">Unpacking of the primary update archive was successful!</system:String>
+    <system:String x:Key="SuccessUnpack7zOperationEventText">Unpacking secondary update archives was successful!</system:String>
+</ResourceDictionary>

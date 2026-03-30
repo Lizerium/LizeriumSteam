@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+  <files>
+    <file name="AppUpdater.dll" checksum="7EF77C11DD7935FEA9CC0B6E2994C0862322D0F63E2163F176169D6E601301E5" size="24064" />
+    <file name="AppUpdater.pdb" checksum="9E0D0991456BDECD5BB1109E714F560057396D9845900AF0AA042787F1E2A4C5" size="62976" />
+    <file name="TestApp.exe" checksum="8A3D3E4227E5C9BB6EC2D2E02147A844E360C6ABB06A72A648745D2CDE5A2452" size="11264" />
+    <file name="TestApp.pdb" checksum="3F96C268E3637CE5D31E97AEED985AC75C072BF5F373BD8663CA9E1E0D34F407" size="22016" />
+  </files>
+</manifest>

@@ -1,0 +1,212 @@
+﻿<UserControl
+    x:Class="LizeriumSteam.Views.GamesView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:local="clr-namespace:LizeriumSteam.Views"
+    xmlns:vm="clr-namespace:LizeriumSteam.ViewModels">
+
+    <hc:DrawerContainer>
+        <Grid>
+            <!--  Основной контент  -->
+            <hc:TransitioningContentControl TransitionStoryboard="{StaticResource FadeTransition}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!--  Список игр  -->
+                    <Border
+                        Grid.Row="0"
+                        BorderBrush="#515156"
+                        BorderThickness="1"
+                        ClipToBounds="True"
+                        CornerRadius="5">
+                        <Grid Background="Transparent">
+                            <ListBox
+                                x:Name="GameCollectionList"
+                                Margin="10"
+                                Padding="15"
+                                HorizontalAlignment="Stretch"
+                                BorderBrush="{StaticResource SecondaryBorderBrush}"
+                                FontFamily="Roboto"
+                                ItemContainerStyle="{DynamicResource ListBoxItemCustom}"
+                                ItemsSource="{Binding PagedGameButtons}">
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel
+                                            HorizontalAlignment="Center"
+                                            ItemHeight="303"
+                                            Orientation="Horizontal" />
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type vm:GameButtonViewModel}">
+                                        <local:GameButtonView />
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+
+                            <!--  Экран загрузки  -->
+                            <hc:TransitioningContentControl TransitionStoryboard="{StaticResource FadeTransition}" Visibility="{Binding IsVisibleLoading}">
+                                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                                    <Border
+                                        Margin="32,0,0,0"
+                                        VerticalAlignment="Center"
+                                        Background="{DynamicResource DarkMaskBrush}"
+                                        CornerRadius="12">
+                                        <hc:LoadingCircle Margin="10" Style="{StaticResource LoadingCircleLight}" />
+                                    </Border>
+                                </StackPanel>
+                            </hc:TransitioningContentControl>
+                        </Grid>
+                    </Border>
+
+                    <!--  Pagination  -->
+                    <hc:Pagination
+                        Grid.Row="1"
+                        MaxPageCount="{Binding PageCount}"
+                        PageIndex="{Binding PageIndex, Mode=TwoWay}">
+                        <hc:Interaction.Triggers>
+                            <hc:EventTrigger EventName="PageUpdated">
+                                <hc:EventToCommand Command="{Binding PageUpdatedCmd}" PassEventArgsToCommand="True" />
+                            </hc:EventTrigger>
+                        </hc:Interaction.Triggers>
+                    </hc:Pagination>
+                </Grid>
+            </hc:TransitioningContentControl>
+
+            <hc:Drawer
+                Grid.Row="0"
+                Dock="Bottom"
+                IsOpen="{Binding IsUpdatesOpen, Mode=TwoWay}"
+                MaskBrush="#80000000">
+
+                <Grid Margin="10" Background="#111111">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <!--  Верхняя панель  -->
+                        <RowDefinition Height="*" />
+                        <!--  Всё остальное со скроллом  -->
+                    </Grid.RowDefinitions>
+
+                    <!--  Верхняя панель  -->
+                    <Grid Grid.Row="0" Margin="0,0,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <hc:TransitioningContentControl TransitionStoryboard="{StaticResource Left2RightTransition}">
+                            <Border
+                                Margin="7"
+                                Padding="15,5"
+                                Background="#1E1E1E"
+                                BorderBrush="DarkMagenta"
+                                BorderThickness="1"
+                                CornerRadius="12">
+                                <TextBlock
+                                    FontSize="32"
+                                    FontWeight="Bold"
+                                    Foreground="White"
+                                    Text="{Binding TitleSelectedProject}" />
+                            </Border>
+                        </hc:TransitioningContentControl>
+
+                        <ComboBox
+                            x:Name="VersionComboBox"
+                            Grid.Column="1"
+                            Width="200"
+                            Height="40"
+                            FontSize="15"
+                            FontWeight="Bold"
+                            ItemsSource="{Binding ChangesProject}"
+                            SelectedItem="{Binding SelectedVersionChangesBlock}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock
+                                        FontSize="15"
+                                        FontWeight="Bold"
+                                        Foreground="White"
+                                        Text="{Binding name}" />
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+
+                        <Button
+                            Grid.Column="2"
+                            Width="30"
+                            Height="30"
+                            Margin="10,0,20,0"
+                            hc:IconElement.Geometry="{DynamicResource RemoveGeometry}"
+                            Background="Transparent"
+                            BorderBrush="White"
+                            BorderThickness="1"
+                            Command="{Binding CloseUpdatesDrawerCommand}"
+                            Cursor="Hand"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Foreground="White" />
+                    </Grid>
+
+                    <!--  Прокручиваемая часть  -->
+                    <hc:ScrollViewer
+                        Grid.Row="1"
+                        HorizontalScrollBarVisibility="Disabled"
+                        VerticalScrollBarVisibility="Auto">
+
+                        <ItemsControl ItemsSource="{Binding SelectedVersionChangesBlock.data}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Margin="0,0,0,15">
+                                        <StackPanel.Style>
+                                            <Style TargetType="StackPanel">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding values.Count}" Value="0">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </StackPanel.Style>
+                                        <TextBlock
+                                            Margin="0,0,0,5"
+                                            FontSize="32"
+                                            FontWeight="Bold"
+                                            Foreground="White"
+                                            Text="{Binding Category.title}"
+                                            TextAlignment="Center" />
+
+                                        <ItemsControl ItemsSource="{Binding values}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <hc:TransitioningContentControl TransitionStoryboard="{StaticResource FadeTransition}">
+                                                        <Border
+                                                            Margin="2"
+                                                            Padding="12"
+                                                            Background="#1E1E1E"
+                                                            BorderBrush="#0078D4"
+                                                            BorderThickness="1"
+                                                            CornerRadius="6">
+                                                            <TextBlock
+                                                                FontSize="24"
+                                                                Foreground="#F5F5F5"
+                                                                Text="{Binding}"
+                                                                TextWrapping="Wrap" />
+                                                        </Border>
+                                                    </hc:TransitioningContentControl>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </hc:ScrollViewer>
+                </Grid>
+            </hc:Drawer>
+        </Grid>
+    </hc:DrawerContainer>
+</UserControl>

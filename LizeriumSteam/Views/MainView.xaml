@@ -1,0 +1,238 @@
+﻿<hc:Window
+    x:Class="LizeriumSteam.Views.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://prismlibrary.com/"
+    Title="{Binding Title}"
+    Width="1200"
+    Height="800"
+    MinWidth="650"
+    MinHeight="650"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    Closing="Window_Closing"
+    Icon="{Binding Icon}"
+    ShowInTaskbar="True"
+    ShowTitle="True"
+    Style="{StaticResource WindowWin10}"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <hc:Window.NonClientAreaContent>
+        <Border CornerRadius="15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Menu Grid.Column="0" HorizontalAlignment="Left">
+                    <MenuItem Height="35" Header="{DynamicResource MainViewReferenceText}">
+                        <!--  Контакты (Проект, Автор и т.п.)  -->
+                        <MenuItem.ItemsSource>
+                            <Binding Path="Contacts" />
+                        </MenuItem.ItemsSource>
+
+                        <!--  Первый уровень: ContactItem (например, "Проект" или "Автор")  -->
+                        <MenuItem.ItemTemplate>
+                            <HierarchicalDataTemplate ItemsSource="{Binding SubContacts}">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Name}" />
+                                </StackPanel>
+
+                                <!--  Второй уровень: InfoName (например "Николай Двуреченский")  -->
+                                <HierarchicalDataTemplate.ItemTemplate>
+                                    <HierarchicalDataTemplate ItemsSource="{Binding Resources}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding InfoName}" />
+                                        </StackPanel>
+
+                                        <!--  Третий уровень: ресурсы (ссылки)  -->
+                                        <HierarchicalDataTemplate.ItemTemplate>
+                                            <DataTemplate>
+                                                <MenuItem Command="{Binding OpenUrlCommand}" Header="{Binding Name}">
+                                                    <MenuItem.Icon>
+                                                        <Path
+                                                            Width="16"
+                                                            Height="16"
+                                                            Data="{Binding IconPathData}"
+                                                            Fill="White"
+                                                            Stretch="Uniform" />
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                            </DataTemplate>
+                                        </HierarchicalDataTemplate.ItemTemplate>
+                                    </HierarchicalDataTemplate>
+                                </HierarchicalDataTemplate.ItemTemplate>
+                            </HierarchicalDataTemplate>
+                        </MenuItem.ItemTemplate>
+                    </MenuItem>
+                </Menu>
+                <Button
+                    Name="ButtonConfig"
+                    Grid.Column="1"
+                    hc:IconElement.Geometry="{StaticResource ConfigGeometry}"
+                    Click="ButtonConfig_Click"
+                    Foreground="{DynamicResource PrimaryTextBrush}"
+                    Style="{StaticResource ButtonIcon}" />
+                <Popup
+                    Name="PopupConfig"
+                    AllowsTransparency="True"
+                    Placement="Bottom"
+                    PlacementTarget="{Binding ElementName=ButtonConfig}"
+                    PopupAnimation="Fade"
+                    StaysOpen="False">
+                    <Border
+                        Padding="10"
+                        Background="#FF2D2D30"
+                        BorderBrush="#FF555555"
+                        BorderThickness="1"
+                        CornerRadius="6"
+                        Effect="{StaticResource EffectShadow2}">
+                        <StackPanel>
+                            <TextBlock
+                                Margin="0,5,0,2"
+                                FontWeight="Bold"
+                                Text="{DynamicResource MainViewLanguageText}" />
+                            <StackPanel x:Name="LangButtonsPanel" Orientation="Vertical">
+                                <Button
+                                    Margin="0,0,0,2"
+                                    Click="SelectLang_Click"
+                                    Content="English"
+                                    IsEnabled="{Binding IsEnEnabled}"
+                                    Tag="en" />
+                                <Button
+                                    Click="SelectLang_Click"
+                                    Content="Русский"
+                                    IsEnabled="{Binding IsRuEnabled}"
+                                    Tag="ru" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Popup>
+            </Grid>
+        </Border>
+    </hc:Window.NonClientAreaContent>
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <!--  основной контент  -->
+                <RowDefinition Height="Auto" />
+                <!--  футер  -->
+            </Grid.RowDefinitions>
+            <!--  Основной интерфейс  -->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!--  Верхняя панель  -->
+                <Grid
+                    Grid.Row="0"
+                    Margin="10,5"
+                    Visibility="{Binding IsReadyApp}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <!--  растягиваемая  -->
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Button
+                            Margin="5,0,5,0"
+                            hc:IconElement.Geometry="{StaticResource PageModeGeometry}"
+                            ClickMode="Press"
+                            Command="{Binding OpenMainSiteCommand}"
+                            Content="{Binding StatusTextLoading}" />
+                        <Button
+                            Grid.Column="1"
+                            Margin="5,0,5,0"
+                            hc:IconElement.Geometry="{StaticResource DialogBoxLauncherGeometry}"
+                            ClickMode="Press"
+                            Command="{Binding OpenWishCommand}"
+                            Content="{DynamicResource MainViewWishStatusText}" />
+                        <Button
+                            Grid.Column="2"
+                            Margin="5,0,5,0"
+                            hc:IconElement.Geometry="{StaticResource DialogBoxLauncherGeometry}"
+                            ClickMode="Press"
+                            Command="{Binding OpenDiscordCommand}"
+                            Content="Discord" />
+                        <Button
+                            Grid.Column="3"
+                            Margin="5,0,5,0"
+                            hc:IconElement.Geometry="{StaticResource DialogBoxLauncherGeometry}"
+                            ClickMode="Press"
+                            Command="{Binding OpenVKCommand}"
+                            Content="VK" />
+                        <ProgressBar
+                            Grid.Column="4"
+                            Width="250"
+                            Height="16"
+                            Margin="20,0,20,0"
+                            Maximum="100"
+                            Minimum="0"
+                            Visibility="{Binding ProgressVisible}"
+                            Value="{Binding LoadingProgress}" />
+                        <TextBlock
+                            Grid.Column="5"
+                            Margin="20,0,20,0"
+                            VerticalAlignment="Center"
+                            FontWeight="Bold"
+                            Foreground="White"
+                            Text="{Binding StatusSpeedLoading}"
+                            Visibility="{Binding StatusSpeedLoadingVisible}" />
+                    </Grid>
+
+                </Grid>
+
+                <!--  Основной контент  -->
+                <hc:TabControl x:Name="MainTabControl" Grid.Row="1" />
+            </Grid>
+
+            <hc:TransitioningContentControl Grid.Row="1" TransitionStoryboard="{StaticResource FadeTransition}">
+                <!--  Футер  -->
+                <Border Padding="5" Background="#222">
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                        <Button
+                            Margin="0,0,8,0"
+                            hc:IconElement.Geometry="{DynamicResource CalendarGeometry}"
+                            Background="Black"
+                            BorderThickness="1"
+                            Content="2025"
+                            FontSize="11"
+                            Foreground="White" />
+
+                        <Button
+                            Margin="0,0,8,0"
+                            hc:IconElement.Geometry="{DynamicResource SuccessGeometry}"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            FontSize="11"
+                            Foreground="White" />
+
+                        <Button
+                            hc:IconElement.Geometry="{DynamicResource FatalGeometry}"
+                            Background="Black"
+                            BorderThickness="1"
+                            Content="{DynamicResource FooterAuthorText}"
+                            FontSize="11"
+                            Foreground="White" />
+                    </StackPanel>
+                </Border>
+            </hc:TransitioningContentControl>
+        </Grid>
+    </Grid>
+</hc:Window>

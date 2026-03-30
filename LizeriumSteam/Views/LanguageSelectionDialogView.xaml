@@ -1,0 +1,47 @@
+﻿<UserControl
+    x:Class="LizeriumSteam.Views.LanguageSelectionDialogView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:local="clr-namespace:LizeriumSteam.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Border
+        Padding="20"
+        Background="{DynamicResource MainContentBackgroundBrush}"
+        BorderBrush="{DynamicResource BorderBrush}"
+        BorderThickness="1"
+        CornerRadius="10">
+
+        <StackPanel>
+            <TextBlock
+                Margin="0,0,0,15"
+                HorizontalAlignment="Center"
+                FontSize="16"
+                FontWeight="Bold"
+                Foreground="{DynamicResource PrimaryTextBrush}"
+                Text="Выберите язык / Select language" />
+
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+
+                <Button
+                    Width="120"
+                    Height="35"
+                    Background="{DynamicResource VioletBrush}"
+                    Command="{Binding SelectRussianCommand}"
+                    Content="Русский"
+                    Foreground="White" />
+
+                <Button
+                    Width="120"
+                    Height="35"
+                    Background="{DynamicResource VioletBrush}"
+                    Command="{Binding SelectEnglishCommand}"
+                    Content="English"
+                    Foreground="White" />
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</UserControl>

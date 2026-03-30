@@ -1,0 +1,64 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!--  String resource that can be localized  -->
+    <system:String x:Key="FooterAuthorText">Двуреченский</system:String>
+    <system:String x:Key="InGameStateText">Вы уже в игре</system:String>
+    <system:String x:Key="NeedUpdateStateText">Доступно обновление!</system:String>
+    <system:String x:Key="DownloadUpdateStateText">Скачивается...</system:String>
+    <system:String x:Key="CloseViewTitleText">Закрытие</system:String>
+    <system:String x:Key="CloseViewExitText">Выход</system:String>
+    <system:String x:Key="CloseViewCollapseText">Свернуть</system:String>
+    <system:String x:Key="MainViewWaitStatusText">Ожидаю загрузки...</system:String>
+    <system:String x:Key="MainViewWishStatusText">Пожелания и вопросы ❓</system:String>
+    <system:String x:Key="MainViewReferenceText">Справка</system:String>
+    <system:String x:Key="MainViewLanguageText">Язык</system:String>
+    <system:String x:Key="MainViewStateErrorUpdateSuccessText">Обновлено до последней версии. 💫 Пожалуйста перезапустите приложение!</system:String>
+    <system:String x:Key="MainViewStateErrorUpdateErrorConnectServerText"> Не обновлено! Ошибка подключения! ⛔</system:String>
+    <system:String x:Key="MainViewStateErrorUpdateErrorSaveFileText"> Не обновлено! Ошибка сохранения файла! ⛔</system:String>
+    <system:String x:Key="MainViewStateErrorUpdateNotAvailableUpdateText_1"> Версия: </system:String>
+    <system:String x:Key="MainViewStateErrorUpdateNotAvailableUpdateText_2"> Пожалуйста перезапустите приложение!</system:String>
+    <system:String x:Key="MainViewUpdateAvailableText_1">Скачивается версия  💢 </system:String>
+    <system:String x:Key="MainViewUpdateAvailableText_2"> 💢 Пожалуйста подождите...</system:String>
+    <system:String x:Key="GameViewChangeLangPrefixText">на</system:String>
+    <system:String x:Key="GameViewChangeLangErrorText">Ошибка смены языка у</system:String>
+    <system:String x:Key="GameViewChangeLangAudioErrorText">Ошибка при копировании аудио-файлов для языка</system:String>
+    <system:String x:Key="GameViewChangeLangText_1">Смена языка у </system:String>
+    <system:String x:Key="GameViewChangeLangText_2"> произошла успешно!</system:String>
+    <system:String x:Key="GameViewTitleText">Игры</system:String>
+    <system:String x:Key="GameViewMenuItemChangeLangText">Изменить язык</system:String>
+    <system:String x:Key="GameViewStartGameText">Запустить</system:String>
+    <system:String x:Key="GameViewForceStartGameText">Принудительно запустить</system:String>
+    <system:String x:Key="GameViewInstallGameText">Установить</system:String>
+    <system:String x:Key="GameViewUpdateGameText">Обновить</system:String>
+    <system:String x:Key="GameViewStopUpdateGameText">Отменить</system:String>
+    <system:String x:Key="GameViewInGameText">В игру</system:String>
+    <system:String x:Key="GameViewOpenControlBtnsText">Панель кнопок управления</system:String>
+    <system:String x:Key="GameViewOpenMenuText">Меню возможностей</system:String>
+    <system:String x:Key="GameViewQueueFilesText">В очереди</system:String>
+    <system:String x:Key="GameViewUnpackFilesText">Распаковано</system:String>
+    <system:String x:Key="GameViewDelFilesText">Удалено</system:String>
+    <system:String x:Key="GameViewAllFilesText">Всего</system:String>
+    <system:String x:Key="AppUpdateCompletedAlertTitleText">Состояние обновления</system:String>
+    <system:String x:Key="AppUpdateCompletedAlertSuccessText">Обновление завершено! Пожалуйста перезапустите приложение...</system:String>
+    <system:String x:Key="AppUpdateCompletedAlertErrorSaveFileText">Обновление прервано! Ошибка сохранения файла...</system:String>
+    <system:String x:Key="AppUpdateCompletedAlertErrorUnpackFileText">Обновление прервано! Ошибка распаковки файлов...</system:String>
+    <system:String x:Key="AppUpdateCompletedAlertErrorConnectServerText">Обновление невозможно! Ошибка подключения к интернету...</system:String>
+    <system:String x:Key="AppUpdateAvailableTitleServerText">Обновление приложения</system:String>
+    <system:String x:Key="AppDownloadAvailableTitleServerText">Скачивание приложения</system:String>
+    <system:String x:Key="AppDeployAvailableTitleServerText">Развёртывание приложения</system:String>
+    <system:String x:Key="AppDeployAvailableUIAlertText">Файлы скачаны, начните установку -</system:String>
+     <system:String x:Key="AppNotDeployAvailableTitleServerText">невозможно, так как файлы установки не найдены!</system:String>
+    <system:String x:Key="AppUpdateAvailableContentServerText">Выпущена новая версия: </system:String>
+    <system:String x:Key="CompleteUpdateProjectAlertSuccessText_1">Обновление для проекта</system:String>
+    <system:String x:Key="CompleteUpdateProjectAlertSuccessText_2">успешно завершено!</system:String>
+    <system:String x:Key="CompleteUpdateProjectAlertSuccessText_2_e">прервано!</system:String>
+    <system:String x:Key="CompleteNotAvailableAlertSuccessText_1">Обновление * Скачивание приложения</system:String>
+    <system:String x:Key="CompleteNotAvailableAlertSuccessText_2">Нет доступных версий для скачивания у</system:String>
+    <system:String x:Key="WarningLowTimeOperationEventText">Пожалуйста подождите, распаковка первичного архива может занять некоторое время!</system:String>
+    <system:String x:Key="WarningUnpack7zOperationEventText">Пожалуйста подождите, распаковка вторичных архивов может занять некоторое время!</system:String>
+    <system:String x:Key="SuccessUnpackTarOperationEventText">Распаковка первичного архива обновления прошла успешно!</system:String>
+    <system:String x:Key="SuccessUnpack7zOperationEventText">Распаковка вторичных архивов обновления прошла успешно!</system:String>
+</ResourceDictionary>

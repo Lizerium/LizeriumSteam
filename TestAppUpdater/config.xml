@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <version>1.2.5</version>
+  <updateServer>https://lizup.ru/uploader/</updateServer>
+  <executable>TestApp.exe</executable>
+</config>
