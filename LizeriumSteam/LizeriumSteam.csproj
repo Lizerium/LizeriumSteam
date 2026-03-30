@@ -296,7 +296,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="config.xml">
+    <Content Include="DefaultConfigs\config.default.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ProjectConfigs\config.xml">

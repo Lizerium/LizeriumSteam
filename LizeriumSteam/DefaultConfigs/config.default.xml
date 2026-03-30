@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<!-- Версия самого конфигурационного файла -->
+	<version>1.0.0</version>
+
+	<!-- URL сервера обновлений -->
+	<updateServer>https://YOUR_UPDATE_SERVER/uploader/</updateServer>
+
+	<!-- Папка, где будут храниться архивы модов -->
+	<modePathArchive>GameModes</modePathArchive>
+
+	<!-- Имя основного лаунчера -->
+	<executable>LizeriumLauncher.exe</executable>
+
+	<!-- Последняя известная версия лаунчера -->
+	<last_version>0.0.0</last_version>
+
+	<mods>
+		<Freelancer>
+			<Title>
+				<Ru>Freelancer (2003)</Ru>
+				<En>Freelancer (2003)</En>
+			</Title>
+
+			<!-- Путь к установленной игре -->
+			<Folder>C:\Path\To\Freelancer</Folder>
+
+			<!-- Папка сохранений внутри Documents -->
+			<GameSaveFolder>My Games\Freelancer</GameSaveFolder>
+
+			<!-- Папка для бэкапов сохранений -->
+			<BackupFolder>FreelancerSaveBackups</BackupFolder>
+
+			<!-- Подпапка, где лежит exe -->
+			<StartupFolder>EXE</StartupFolder>
+
+			<!-- Исполняемый файл игры -->
+			<StartupFile>Freelancer.exe</StartupFile>
+
+			<!-- Имя установщика -->
+			<Installer>FreelancerInstaller.exe</Installer>
+
+			<!-- Версия установленной игры -->
+			<LastVersionInstall>0.0.0</LastVersionInstall>
+
+			<!-- Ссылка на поддержку / сайт -->
+			<SupportUrl>https://YOUR_SITE_OR_SUPPORT_PAGE</SupportUrl>
+
+			<!-- Обновлять ли этот мод -->
+			<Updated>false</Updated>
+
+			<Server>
+				<!-- IP игрового сервера -->
+				<Ip>127.0.0.1</Ip>
+
+				<!-- Порт игрового сервера -->
+				<Port>2302</Port>
+			</Server>
+		</Freelancer>
+
+		<LizeriumFreelancerMode>
+			<Title>
+				<Ru>Freelancer Lizerium</Ru>
+				<En>Freelancer Lizerium</En>
+			</Title>
+
+			<!-- Путь к установленному моду -->
+			<Folder>C:\Path\To\LizeriumFreelancerMode</Folder>
+
+			<GameSaveFolder>My Games\Freelancer</GameSaveFolder>
+			<BackupFolder>LizeriumSaveBackups</BackupFolder>
+			<StartupFolder>EXE</StartupFolder>
+			<StartupFile>Freelancer.exe</StartupFile>
+			<Installer>LizeriumFLInstaller.exe</Installer>
+			<LastVersionInstall>0.0.0</LastVersionInstall>
+			<SupportUrl>https://YOUR_SITE_OR_SUPPORT_PAGE</SupportUrl>
+			<Updated>false</Updated>
+
+			<Server>
+				<Ip>127.0.0.1</Ip>
+				<Port>2302</Port>
+			</Server>
+		</LizeriumFreelancerMode>
+
+		<LizeriumUnity>
+			<Title>
+				<Ru>Freelancer Lizerium (Unity ver.)</Ru>
+				<En>Freelancer Lizerium (Unity ver.)</En>
+			</Title>
+
+			<!-- Путь к установленной Unity-версии -->
+			<Folder>C:\Path\To\LizeriumUnity</Folder>
+
+			<GameSaveFolder>My Games\Lizerium</GameSaveFolder>
+			<BackupFolder>LizeriumUnitySaveBackups</BackupFolder>
+
+			<!-- Если exe лежит в корне, можно оставить пустым -->
+			<StartupFolder></StartupFolder>
+
+			<StartupFile>Lizerium.exe</StartupFile>
+			<Installer>LizeriumUInstaller.exe</Installer>
+			<LastVersionInstall>0.0.0</LastVersionInstall>
+			<SupportUrl>https://YOUR_SITE_OR_SUPPORT_PAGE</SupportUrl>
+			<Updated>false</Updated>
+
+			<Server>
+				<Ip>127.0.0.1</Ip>
+				<Port>2302</Port>
+			</Server>
+		</LizeriumUnity>
+	</mods>
+</config>
