@@ -2,8 +2,8 @@
  * Author: Nikolay Dvurechensky
  * Site: https://dvurechensky.pro/
  * Gmail: dvurechenskysoft@gmail.com
- * Last Updated: 01 апреля 2026 13:19:48
- * Version: 1.0.5
+ * Last Updated: 02 апреля 2026 07:06:20
+ * Version: 1.0.7
  */
 
 using AppUpdater.Recipe;
