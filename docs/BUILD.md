@@ -1,21 +1,28 @@
-# ⚙️ Сборка проекта
+# ⚙️ Build Instructions
 
-## Сборка `.exe`
+- [Back to main](../README.md)
 
-1. Перейдите в папку проекта [LizeriumSteam](../LizeriumSteam)
-2. Создайте папку `ProjectConfigs`
-3. Внутри `ProjectConfigs` создайте файл `config.xml`
-4. В качестве шаблона используйте [config.default.xml](../LizeriumSteam/DefaultConfigs/config.default.xml)
-5. Заполните `config.xml` своими значениями перед сборкой проекта
+## Building the `.exe`
 
-## Запуск
+1. Navigate to the project folder: [LizeriumSteam](../LizeriumSteam)
+2. Create a folder named `ProjectConfigs`
+3. Inside `ProjectConfigs`, create a file named `config.xml`
+4. Use this template as a base: [config.default.xml](../LizeriumSteam/DefaultConfigs/config.default.xml)
+5. Fill `config.xml` with your own values before building the project
 
-1. В файле `config.xml` необходимо указать адрес вашего сервера обновлений
-2. Для работы проекта требуется собственный сервер
-3. Исходный код серверной части находится здесь: [LizeriumServer](https://github.com/Lizerium/LizeriumServer)
+---
 
-## Важно
+## Running
 
-- Файл `config.xml` **не входит в репозиторий**
-- Перед сборкой его необходимо создать вручную
-- Не используйте тестовые или локальные значения (`localhost`, `127.0.0.1`) в production-сборке
+1. In `config.xml`, specify the address of your update server
+2. The project requires a dedicated backend server to function
+3. Server-side source code is available here:  
+   [LizeriumServer](https://github.com/Lizerium/LizeriumServer)
+
+---
+
+## Important
+
+- The `config.xml` file is **not included in the repository**
+- It must be created manually before building
+- Do NOT use test or local values (`localhost`, `127.0.0.1`) in production builds

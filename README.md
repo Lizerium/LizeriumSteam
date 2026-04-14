@@ -19,82 +19,111 @@
 </p>
 
 <p align="center">
-  <b>Lizerium Launcher</b> — лаунчер и система постепенного обновления клиента и игровых модификаций
-  для экосистемы <b>Lizerium</b>, рассчитанная на минимальный трафик, контроль версий и серверную публикацию.
+  <b>Lizerium Launcher</b> — a launcher and incremental update system for client applications and game modifications
+  within the <b>Lizerium</b> ecosystem, designed for minimal bandwidth usage, version control, and server-side publishing.
 </p>
 
+<div align="center" style="margin: 20px 0; padding: 10px; background: #1c1917; border-radius: 10px;">
+  <strong>🌐 Language: </strong>
+  
+  <a href="./README.ru.md" style="color: #F5F752; margin: 0 10px;">
+    🇷🇺 Russian
+  </a>
+  | 
+  <span style="color: #0891b2; margin: 0 10px;">
+    ✅ 🇺🇸 English (current)
+  </span>
+</div>
+
+---
+
 > [!NOTE]
-> Этот проект является частью экосистемы **Lizerium** и относится к направлению:
+> This project is part of the **Lizerium** ecosystem and belongs to the following direction:
 >
-> * [`Lizerium.Software.Structs`](https://github.com/Lizerium/Lizerium.Software.Structs)
+> - [`Lizerium.Software.Structs`](https://github.com/Lizerium/Lizerium.Software.Structs)
 >
-> Если вы ищете связанные инженерные и вспомогательные инструменты, начните оттуда.
+> If you are looking for related engineering and supporting tools, start there.
 
-# Оглавление
+# Table of Contents
 
-- [Оглавление](#оглавление)
-  - [📦 О проекте](#-о-проекте)
-  - [Общее](#общее)
-  - [Технологии](#технологии)
-  - [Возможности](#возможности)
-  - [Документация](#документация)
-  - [Связанные проекты](#связанные-проекты)
-  - [Другое](#другое)
+- [Table of Contents](#table-of-contents)
+  - [📦 About the Project](#-about-the-project)
+  - [Overview](#overview)
+  - [Technologies](#technologies)
+  - [Features](#features)
+  - [Documentation](#documentation)
+  - [Related Projects](#related-projects)
+  - [Other](#other)
 
-## 📦 О проекте
+---
 
-**Lizerium Launcher** — это лаунчер и система обновлений, разработанная для экосистемы Lizerium.
+## 📦 About the Project
 
-Основная задача — обеспечить **постепенное (delta-based) обновление** приложений и игровых модификаций с минимальным потреблением трафика.
+**Lizerium Launcher** is a launcher and update system designed for the Lizerium ecosystem.
 
-Проект реализует подход, схожий с обновлениями браузеров (например, Chrome):
+The main goal is to provide **incremental (delta-based) updates** for applications and game modifications with minimal bandwidth usage.
 
-- скачивается только разница между версиями
-- поддерживается несколько предыдущих версий
-- обновления происходят прозрачно для пользователя
+The project follows an approach similar to modern browser updates (e.g., Chrome):
 
-## Общее
+- only differences between versions are downloaded
+- multiple previous versions are supported
+- updates are transparent to the user
 
-![PRISM версия](<docs/HISTORY/Переход на PRISM.png>)
+---
+
+## Overview
+
+![PRISM version](<docs/HISTORY/Переход на PRISM.png>)
 
 > [!IMPORTANT]
-> Цель компонента — обеспечить постоянное и постепенное обновление приложений без вмешательства пользователя.
-> Поведение аналогично механике обновления Google Chrome: каждое обновление загружает минимально возможный объём данных.
+> The goal of this component is to provide continuous and incremental updates without user interaction.  
+> The behavior is similar to Google Chrome’s update mechanism — each update downloads only the minimal required data.
 
 > [!NOTE]
-> Проект использует локальный конфиг, который подхватывается во время сборки.
+> The project uses a local configuration that is applied during the build process.
 
-## Технологии
+---
+
+## Technologies
 
 - WPF
 - Prism.Unity
 - .NET
 
-## Возможности
+---
 
-- Постепенное обновление лаунчера
-- Дельта-обновления между версиями
-- Публикация игровых модификаций
-- Минимизация трафика обновлений
-- Интеграция с серверной частью
-- Поддержка версионирования сборок
+## Features
 
-## Документация
+- Incremental launcher updates
+- Delta patching between versions
+- Game modification publishing
+- Minimal update bandwidth usage
+- Integration with server-side infrastructure
+- Versioned build support
 
-- [Сборка проекта](docs/BUILD.md)
-- [Публикация обновлений лаунчера](docs/PUBLISH_LAUNCHER.md)
-- [Публикация модов](docs/PUBLISH_MODS.md)
-- [Формат обновлений](docs/UPDATE_FORMAT.md)
-- [Архитектура проекта](docs/Архитектура.md)
-- [История визуальных изменений](docs/HISTORY)
-- [Конкуренты | Наблюдения](docs/LAUNCHER_CONCURENTS)
+---
 
-## Связанные проекты
+## Documentation
 
-- [LizeriumServer](https://github.com/Lizerium/LizeriumServer)
-- [Lizerium Find Changes](https://github.com/Lizerium/LizeriumFindChanges)
+- [Build Guide](docs/BUILD.md)
+- [Launcher Publishing](docs/PUBLISH_LAUNCHER.md)
+- [Mods Publishing](docs/PUBLISH_MODS.md)
+- [Update Format](docs/UPDATE_FORMAT.md)
+- [Project Architecture](docs/Architecture.md)
+- [Visual History](docs/HISTORY)
+- [Competitors | Observations](docs/LAUNCHER_CONCURENTS)
 
-## Другое
+---
+
+## Related Projects
+
+- https://github.com/Lizerium/LizeriumServer
+- https://github.com/Lizerium/LizeriumFindChanges
+
+---
+
+## Other
 
 > [!TIP]
-> В папке `Launcher`, как правило, в корне сервера (`LizeriumServer`) лежит актуальная установочная версия файла `LizeriumLauncher`.
+> The latest installer version of `LizeriumLauncher` is typically located in the `Launcher` directory  
+> at the root of the server (`LizeriumServer`).

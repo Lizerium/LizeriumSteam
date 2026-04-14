@@ -1,8 +1,10 @@
-# 💣 Публикация модов
+# 💣 Mod Publishing
 
-## Структура папок мода на сервере
+- [Back to main](../README.md)
 
-Для мода `LizeriumFreelancerMode` на `LizeriumServer` используется следующая структура:
+## Server Mod Folder Structure
+
+For the `LizeriumFreelancerMode` mod on `LizeriumServer`, the following structure is used:
 
 ```text
 Mods/
@@ -12,55 +14,67 @@ Mods/
     └── version.xml
 ```
 
-## Генерация файлов публикации мода
+---
 
-При публикации мода необходимо:
+## Generating Mod Release Files
 
-- сгенерировать `manifest.xml`
-- подготовить установочные файлы к `deploy`
+When publishing a mod, you need to:
 
-Эти файлы будут размещены в каталоге:
+- generate `manifest.xml`
+- prepare installation files for deployment
+
+These files will be placed in:
 
 ```text
 Mods/LizeriumFreelancerMode/99.3.4
 ```
 
-Для этого используется Publisher из проекта [AppUpdater.Publisher](../AppUpdater.Publisher/bin/Release)
+To generate them, use the Publisher from:
 
-> Команда генерации
+[AppUpdater.Publisher](../AppUpdater.Publisher/bin/Release)
+
+### Generation command:
 
 ```sh
 .\AppUpdater.Publisher.exe -source:.\INPUT\3_FL_APP\ -target:.\MODS\ -version:99.3.4 -deltas:2
 ```
 
 > [!IMPORTANT]
-> Дополнительно необходимо дробить игровые файлы на `.bin` части как можно меньшего размера.
-> Это делается через **Inno Setup** скрипт, который лежит первым в проекте (у вас может быть свой скрипт и свой вариант дробления), например:
+> Additionally, game files must be split into smaller `.bin` parts.
+> This is typically done using an **Inno Setup** script (you can use your own version), for example:
 >
 > ```text
 > 99.3.4.iss
 > ```
 
-## Загрузка файлов мода на сервер
+---
 
-После генерации файлов публикации необходимо забрать всё содержимое из папки со сформированными бинарниками и перенести его вместе с манифестом внутрь сервера.
+## Uploading Mod Files to Server
+
+After generating the release files:
+
+- take all generated binaries
+- include the manifest
+- upload everything into the server directory
 
 ![VIEW_MOD](MEDIA/1.png)
 
-## Файл версии мода
+---
 
-В файле:
+## Mod Version File
+
+In the file:
 
 ```text
 Mods/LizeriumFreelancerMode/version.xml
 ```
 
-необходимо указать:
+you must specify:
 
-- актуальную версию игры
-- номер последнего архива обновления, доступного в `Mods/LizeriumFreelancerMode/updates`
+- the current game version
+- the latest update archive version available in `updates`
 
-Пример:
+### Example:
 
 ```xml
 <config>
@@ -69,20 +83,20 @@ Mods/LizeriumFreelancerMode/version.xml
 </config>
 ```
 
-## Архивы обновлений
+---
 
-В папку:
+## Update Archives
+
+Upload update archives into:
 
 ```text
 Mods/LizeriumFreelancerMode/updates
 ```
 
-необходимо загружать архивы обновлений.
-
 > [!TIP]
-> Архивы формируются следующим образом:
+> Archives are created as follows:
 >
-> 1. Сначала создаётся архив `.7z` с **ультра-сжатием** `LZMA2`
-> 2. Затем из полученного `.7z` создаётся `.tar` архив
+> 1. First, create a `.7z` archive using **ultra compression (LZMA2)**
+> 2. Then wrap the `.7z` into a `.tar` archive
 
 ![Updates](MEDIA/4.png)
