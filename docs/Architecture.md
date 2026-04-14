@@ -224,7 +224,7 @@ The application runs as a **Prism Shell application**, not a plain WPF app.
 
 Example:
 
-```csharp id="gq6cfe"
+```csharp
 public partial class App : PrismApplication
 {
     protected override Window CreateShell()
@@ -246,7 +246,7 @@ public partial class App : PrismApplication
 
 Instead of manually calling `new SomeService()` everywhere, everything is registered in the container:
 
-```csharp id="5k9rj1"
+```csharp
 containerRegistry.RegisterSingleton<IGameService, GameService>();
 containerRegistry.RegisterSingleton<ISettingsService, SettingsService>();
 ```
@@ -259,7 +259,7 @@ Dependencies are then injected automatically.
 
 Previously:
 
-```csharp id="9r6kld"
+```csharp
 var window = new MainWindow();
 window.Show();
 ```
