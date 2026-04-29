@@ -2,8 +2,8 @@
  * Author: Nikolay Dvurechensky
  * Site: https://dvurechensky.pro/
  * Gmail: dvurechenskysoft@gmail.com
- * Last Updated: 28 апреля 2026 14:44:28
- * Version: 1.0.35
+ * Last Updated: 29 апреля 2026 07:13:25
+ * Version: 1.0.36
  */
 
 namespace LizeriumSteam.Services.Lang
