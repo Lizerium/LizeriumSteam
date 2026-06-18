@@ -2,8 +2,8 @@
  * Author: Nikolay Dvurechensky
  * Site: https://dvurechensky.pro/
  * Gmail: dvurechenskysoft@gmail.com
- * Last Updated: 17 июня 2026 07:11:17
- * Version: 1.0.84
+ * Last Updated: 18 июня 2026 07:13:02
+ * Version: 1.0.85
  */
 
 namespace AppUpdater.Chef
