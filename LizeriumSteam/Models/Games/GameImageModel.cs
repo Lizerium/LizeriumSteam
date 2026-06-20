@@ -2,8 +2,8 @@
  * Author: Nikolay Dvurechensky
  * Site: https://dvurechensky.pro/
  * Gmail: dvurechenskysoft@gmail.com
- * Last Updated: 19 июня 2026 07:11:13
- * Version: 1.0.86
+ * Last Updated: 20 июня 2026 07:10:40
+ * Version: 1.0.87
  */
 
 namespace LizeriumSteam.Models.Games
