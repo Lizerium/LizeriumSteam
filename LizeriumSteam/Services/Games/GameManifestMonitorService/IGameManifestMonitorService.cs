@@ -2,8 +2,8 @@
  * Author: Nikolay Dvurechensky
  * Site: https://dvurechensky.pro/
  * Gmail: dvurechenskysoft@gmail.com
- * Last Updated: 28 июня 2026 12:06:56
- * Version: 1.0.95
+ * Last Updated: 29 июня 2026 07:17:12
+ * Version: 1.0.96
  */
 
 namespace LizeriumSteam.Services.Games.GameManifestMonitorService
