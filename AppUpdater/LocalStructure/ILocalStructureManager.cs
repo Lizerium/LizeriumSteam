@@ -2,8 +2,8 @@
  * Author: Nikolay Dvurechensky
  * Site: https://dvurechensky.pro/
  * Gmail: dvurechenskysoft@gmail.com
- * Last Updated: 10 июля 2026 12:17:08
- * Version: 1.0.106
+ * Last Updated: 11 июля 2026 14:23:48
+ * Version: 1.0.107
  */
 
 using AppUpdater.LocalStructure.Components;
